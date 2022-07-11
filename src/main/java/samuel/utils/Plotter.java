@@ -15,8 +15,8 @@ public class Plotter {
             @RequestParam(name = "from", defaultValue = "0") String from,
             @RequestParam(name = "to", defaultValue = "100") String to,
             @RequestParam(name = "step", defaultValue = "1") String step) {
-        var eq = new Graph(equation, from, to, step);
-        return eq.evaluate();
+        var eq = new Graph(equation);
+        return eq.evaluate(from, to, step);
     }
 
 

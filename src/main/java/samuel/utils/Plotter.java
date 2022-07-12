@@ -10,12 +10,12 @@ import java.util.Map;
 public class Plotter {
 
     @GetMapping("/plot")
-    public Map<Double, Double> plot(
+    public double[] plot(
             @RequestParam(name = "equation") String equation,
             @RequestParam(name = "from", defaultValue = "0") String from,
             @RequestParam(name = "to", defaultValue = "100") String to,
             @RequestParam(name = "step", defaultValue = "1") String step) {
-        var eq = new Graph(equation);
+        var eq = new Equation(equation);
         return eq.evaluate(from, to, step);
     }
 
